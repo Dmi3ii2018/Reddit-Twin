@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './utils/serviceWorker';
+
+import {createBrowserHistory} from 'history'
+import Routes from './routes';
+
+
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routes history={history} />
   </React.StrictMode>,
   document.getElementById('root')
 );
