@@ -1,14 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 
 import App from './containers/App/App';
 
 const Routes = (props) => {
+    console.log(props)
     return (
-        <Router {...props} >
+        <Switch {...props} >
             <Route path="/" component={App} />
-        </Router>
+        </Switch>
     )
 }
 
-export default Routes
+export default withRouter(Routes)
