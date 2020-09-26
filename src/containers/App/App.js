@@ -6,8 +6,8 @@ class App extends React.Component {
       super();
 
       this.state = {
-        posts: '',
-        loading: false,
+        posts: [],
+        loading: true,
       }
     }
 
@@ -21,6 +21,7 @@ class App extends React.Component {
           posts: snapshot.val(),
           loading: false
         });
+        console.log("setState here")
       });
     }
     
