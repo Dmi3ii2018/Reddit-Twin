@@ -32,7 +32,7 @@ class App extends React.Component {
         {
           this.props.children && React.cloneElement(
           this.props.children, {
-            firebaseRef: firebase.database().ref('Post'),
+            firebase: firebase.database(),
             posts: this.state.posts,
             loading: this.state.loading
         })}
