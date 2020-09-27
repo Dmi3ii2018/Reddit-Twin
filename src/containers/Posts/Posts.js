@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+const NUMBER_OF_AD_BACKGROUNDS = 2;
+
+const getRandomNumber = (number) => {
+  return Math.floor(Math.random() * number);
+};
+
 class Posts extends Component {
   handleUpvote = (post, key) => {
     this.props.firebase.ref("Post/" + key).set({
@@ -19,8 +25,6 @@ class Posts extends Component {
 
   render() {
     let posts = this.props.posts;
-    console.log(this.props.posts);
-    console.log(Object.keys(posts));
 
     let _this = this;
 
@@ -32,27 +36,38 @@ class Posts extends Component {
       return <div>Loading…</div>;
     }
     return (
-      <div className="Posts">
-        {Object.keys(posts).map((key) => {
+      <div className="posts">
+        {Object.keys(posts).map((key, i) => {
           return (
-            <div key={Math.random()}>
-              <div>Title: {posts[key].title}</div>
-              <div>Upvotes: {posts[key].upvote}</div>
-              <div>Downvotes: {posts[key].downvote}</div>
-
-              <div>
-                <button
-                  onClick={_this.handleUpvote.bind(this, posts[key], key)}
-                  type="button"
-                >
-                  Upvote
-                </button>
-                <button
-                  onClick={_this.handleDownvote.bind(this, posts[key], key)}
-                  type="button"
-                >
-                  Downvote
-                </button>
+            <div
+              key={Math.random()}
+              className={`post-item post-item--${getRandomNumber(
+                NUMBER_OF_AD_BACKGROUNDS
+              )}`}
+            >
+              <div className="content">
+                <h3>Nick Patric</h3>
+                <span className="preview">{posts[key].title}</span>
+                <div>
+                  <div>
+                    <button
+                      onClick={_this.handleUpvote.bind(this, posts[key], key)}
+                      type="button"
+                    >
+                      Upvote
+                    </button>
+                    {posts[key].upvote}
+                  </div>
+                  <div>
+                    <button
+                      onClick={_this.handleDownvote.bind(this, posts[key], key)}
+                      type="button"
+                    >
+                      Downvote
+                    </button>
+                    {posts[key].downvote}
+                  </div>
+                </div>
               </div>
             </div>
           );

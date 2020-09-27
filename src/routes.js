@@ -5,7 +5,6 @@ import App from "./containers/App/App";
 import Posts from "./containers/Posts/Posts";
 import AddPost from "./containers/AddPost/AddPost";
 
-
 const Routes = (props) => {
   console.log(props);
   return (
@@ -15,15 +14,11 @@ const Routes = (props) => {
         path="/posts"
         render={(props) => (
           <App>
+            <AddPost />
             <Posts {...props} />
           </App>
         )}
       />
-      <Route path="/add-post" render={(props) => (
-          <App>
-            <AddPost {...props} />
-          </App>
-        )}/>
     </Switch>
   );
 };

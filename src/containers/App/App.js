@@ -28,14 +28,24 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="App">
+      
+      <div className="App chat">
         {
+          React.Children.map(this.props.children, (child) => 
+          React.cloneElement(
+            child, {
+              firebase: firebase.database(),
+              posts: this.state.posts,
+              loading: this.state.loading
+          }))
+        }
+        {/* {
           this.props.children && React.cloneElement(
           this.props.children, {
             firebase: firebase.database(),
             posts: this.state.posts,
-            loading: this.state.loading
-        })}
+            loading: this.state.loading */}
+        {/* })} */}
       </div>
     )
   }

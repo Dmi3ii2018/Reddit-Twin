@@ -1,0 +1,40 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("./img/red-brick-wall-3614976_1920.jpg");
+  background-size: contain;
+  color: #000000
+}
+
+.chat {
+  background:transparent;
+  width: 100%;
+  height: 100vh;
+  padding: 30px 50px;
+}
+
+.post-item {
+  float: left;
+  background-color: transparent;
+  padding: 30px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.post-item--0 {
+  background-image: url("./img/adv/38bfdac1b9edccef8daf5c273646dd2b_ripped-notebook-paper-png-picture-785588-ripped-notebook-paper-png_530-248.png");
+  max-width: 550px;
+  min-height: 200px;
+  padding: 91px;
+}
+
+.post-item--1 {
+  background-image: url("./img/adv/55-553477_co-old-lined-paper-png-plywood.png");
+  max-width: 400px;
+  min-height: 200px;
+  padding: 91px;
+  box-sizing: content-box;
+} 
+
+
