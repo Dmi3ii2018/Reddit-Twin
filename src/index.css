@@ -1,13 +1,38 @@
+@font-face {
+  font-family: "Little Cecily";
+  src: url("./fonts/LittleCecily.woff2") format("woff2"),
+    url("./fonts/LittleCecily.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EVEY";
+  src: url("./fonts/EVEY-Bold.woff2") format("woff2"),
+    url("./fonts/EVEY-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ustroke";
+  src: url("./fonts/Ustroke-Regular.woff2") format("woff2"),
+    url("./fonts/Ustroke-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
-  background-image: url("./img/red-brick-wall-3614976_1920.jpg");
-  background-size: contain;
-  color: #000000
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./img/red-brick-wall-3614976_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000000;
 }
 
 .chat {
-  background:transparent;
-  width: 100%;
+  background: transparent;
   height: 100vh;
   padding: 30px 50px;
 }
@@ -15,26 +40,49 @@ body {
 .post-item {
   float: left;
   background-color: transparent;
-  padding: 30px;
-  box-sizing: border-box;
+  padding: 4% 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  max-width: 400px;
+  min-width: 200px;
+  min-height: 200px;
+  box-sizing: content-box;
 }
 
 .post-item--0 {
-  background-image: url("./img/adv/38bfdac1b9edccef8daf5c273646dd2b_ripped-notebook-paper-png-picture-785588-ripped-notebook-paper-png_530-248.png");
-  max-width: 550px;
-  min-height: 200px;
-  padding: 91px;
+  background-image: url("./img/adv/4T96z7kjc.png");
+  margin: 14px 7px 29px 17px;
 }
 
 .post-item--1 {
-  background-image: url("./img/adv/55-553477_co-old-lined-paper-png-plywood.png");
-  max-width: 400px;
-  min-height: 200px;
-  padding: 91px;
-  box-sizing: content-box;
-} 
+  background-image: url("./img/adv/9d9ad0a09007f03d30dcf2678198fbc4.png");
+  padding: 50px 6px;
+  margin: 10px 14px 21px 11px;
+}
 
+.content {
+  width: 80%;
+  margin: 0 auto;
+}
 
+.font--3 {
+  font-family: "EVEY", Arial, sans-serif;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.font--1 {
+  font-family: "Little Cecily", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.font--0 {
+  font-family: "Ustroke", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: yellow;
+  background-image: none;
+  background-color: transparent;
+}

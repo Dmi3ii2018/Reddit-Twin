@@ -34,9 +34,10 @@ export class AddPost extends Component {
   render() {
     return (
       <div className="AddPost">
-        <input
+        <textarea
           type="text"
           placeholder="Write the title of your post"
+          maxlength="300"
           onChange={this.handleChange}
           value={this.state.title}
         />

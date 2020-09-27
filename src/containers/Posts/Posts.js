@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 const NUMBER_OF_AD_BACKGROUNDS = 2;
+const FONT_TYPES = 4;
 
 const getRandomNumber = (number) => {
   return Math.floor(Math.random() * number);
@@ -43,10 +44,9 @@ class Posts extends Component {
               key={Math.random()}
               className={`post-item post-item--${getRandomNumber(
                 NUMBER_OF_AD_BACKGROUNDS
-              )}`}
+              )} font--${getRandomNumber(FONT_TYPES)}`}
             >
               <div className="content">
-                <h3>Nick Patric</h3>
                 <span className="preview">{posts[key].title}</span>
                 <div>
                   <div>
