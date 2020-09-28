@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 
+const NUMBER_OF_AD_BACKGROUNDS = 2;
+const FONT_TYPES = 3;
+
+const getRandomNumber = (number) => {
+  return Math.floor(Math.random() * number);
+};
+
 export class AddPost extends Component {
   constructor() {
     super();
@@ -21,6 +28,8 @@ export class AddPost extends Component {
     e.preventDefault();
     this.props.firebase.ref("Post").push({
       title: this.state.title,
+      fontType: getRandomNumber(FONT_TYPES),
+      background: getRandomNumber(NUMBER_OF_AD_BACKGROUNDS),
       upvote: 0,
       downvote: 0,
     });
@@ -34,16 +43,17 @@ export class AddPost extends Component {
   render() {
     return (
       <div className="AddPost">
-        <textarea
-          type="text"
-          placeholder="Write the title of your post"
-          maxlength="300"
-          onChange={this.handleChange}
-          value={this.state.title}
-        />
-        <button type="submit" onClick={this.handleSubmit}>
-          Submit
-        </button>
+        <form action="" class="air" onSubmit={this.handleSubmit}>
+          <div class="form-inner">
+            <div class="form-row">
+              <label for="address">Оставь свой пост</label>
+              <textarea rows="3" id="address" minLength="10" maxLength="200" required onChange={this.handleChange}></textarea>
+            </div>
+            <div class="form-row-icon">
+              <button type="submit">Post</button>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }

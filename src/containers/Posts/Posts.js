@@ -1,12 +1,5 @@
 import React, { Component } from "react";
 
-const NUMBER_OF_AD_BACKGROUNDS = 2;
-const FONT_TYPES = 4;
-
-const getRandomNumber = (number) => {
-  return Math.floor(Math.random() * number);
-};
-
 class Posts extends Component {
   handleUpvote = (post, key) => {
     this.props.firebase.ref("Post/" + key).set({
@@ -26,7 +19,7 @@ class Posts extends Component {
 
   render() {
     let posts = this.props.posts;
-
+    console.log(posts)
     let _this = this;
 
     if (!posts) {
@@ -42,9 +35,7 @@ class Posts extends Component {
           return (
             <div
               key={Math.random()}
-              className={`post-item post-item--${getRandomNumber(
-                NUMBER_OF_AD_BACKGROUNDS
-              )} font--${getRandomNumber(FONT_TYPES)}`}
+              className={`post-item post-item--${posts[key].background} font--${posts[key].fontType}`}
             >
               <div className="content">
                 <span className="preview">{posts[key].title}</span>
