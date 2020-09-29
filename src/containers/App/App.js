@@ -30,6 +30,7 @@ class App extends React.Component {
     return (
       
       <div className="App chat">
+        <h1>React + Firebase</h1>
         {
           React.Children.map(this.props.children, (child) => 
           React.cloneElement(
@@ -39,13 +40,6 @@ class App extends React.Component {
               loading: this.state.loading
           }))
         }
-        {/* {
-          this.props.children && React.cloneElement(
-          this.props.children, {
-            firebase: firebase.database(),
-            posts: this.state.posts,
-            loading: this.state.loading */}
-        {/* })} */}
       </div>
     )
   }

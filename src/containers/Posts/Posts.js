@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Posts extends Component {
   handleUpvote = (post, key) => {
-    this.props.firebase.ref("Post/" + key).set({
+    this.props.firebase.ref("Post/" + key).update({
       title: post.title,
       upvote: post.upvote + 1,
       downvote: post.downvote,
@@ -10,7 +10,7 @@ class Posts extends Component {
   };
 
   handleDownvote = (post, key) => {
-    this.props.firebase.ref("Post/" + key).set({
+    this.props.firebase.ref("Post/" + key).update({
       title: post.title,
       upvote: post.upvote,
       downvote: post.downvote + 1,
@@ -27,7 +27,7 @@ class Posts extends Component {
     }
 
     if (this.props.loading) {
-      return <div>Loading…</div>;
+      return <div style={{color:"white"}}>Loading…</div>;
     }
     return (
       <div className="posts">
@@ -39,13 +39,13 @@ class Posts extends Component {
             >
               <div className="content">
                 <span className="preview">{posts[key].title}</span>
-                <div>
+                <div className="buttons-wrapper"> 
                   <div>
                     <button
                       onClick={_this.handleUpvote.bind(this, posts[key], key)}
                       type="button"
                     >
-                      Upvote
+                      +
                     </button>
                     {posts[key].upvote}
                   </div>
@@ -54,7 +54,7 @@ class Posts extends Component {
                       onClick={_this.handleDownvote.bind(this, posts[key], key)}
                       type="button"
                     >
-                      Downvote
+                      -
                     </button>
                     {posts[key].downvote}
                   </div>

@@ -31,10 +31,15 @@ body {
   color: #000000;
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 .chat {
   background: transparent;
   height: 100vh;
-  padding: 30px 50px;
+  padding: 0 50px;
 }
 
 .post-item {
@@ -45,7 +50,7 @@ body {
   background-position: center;
   background-size: cover;
   max-width: 400px;
-  min-width: 200px;
+  min-width: 250px;
   min-height: 200px;
   box-sizing: content-box;
 }
@@ -62,32 +67,46 @@ body {
 }
 
 .content {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
-.font--3 {
+.font--2 {
   font-family: "EVEY", Arial, sans-serif;
   font-size: 45px;
   font-weight: 500;
 }
 
-.font--1, 
-.form-row label {
+.font--1,
+.form-inner,
+.form-row-icon button {
   font-family: "Little Cecily", Arial, sans-serif;
   font-size: 25px;
   font-weight: 800;
 }
 
-.font--0 {
+.font--0,
+h1 {
   font-family: "Ustroke", Arial, sans-serif;
-  font-size: 20px;
+  font-size: 54px;
   font-weight: 800;
   color: yellow;
   background-image: none;
   background-color: transparent;
 }
 
+h1 {
+  font-size: 20px;
+}
+
+.buttons-wrapper {
+  display: flex;
+}
+
+.buttons-wrapper div,
+.buttons-wrapper button {
+  margin-right: 10px;
+}
 
 * {box-sizing: border-box;}
 .air {
@@ -95,7 +114,7 @@ body {
   margin: 50px auto 0;
   padding: 20px;
   background: #E4E3DF;
-  font-family: 'Oswald', sans-serif;
+  box-shadow: 8px 8px 7px rgba(0,0,0,1)
 }
 .form-inner {
   border: 2px solid #909090;
@@ -125,7 +144,10 @@ body {
   padding: 10px;
   border-bottom: 2px solid #909090;
 }
-.form-row label {display: block;}
+.form-row label {
+  display: block;
+  text-decoration: underline;
+}
 .form-row input {
   display: block;
   width: 100%;
@@ -135,8 +157,7 @@ body {
   background: #E4E3DF;
 }
 .form-row textarea {
-  width: 100%;
-  margin-bottom:40px;
+  width: 100%;;
   padding: 0;
   outline: 0;
   line-height: 40px;
@@ -147,6 +168,7 @@ body {
   background-repeat: repeat;
   border-width: 0;
   resize: none;
+  font-family: "Little Cecily", Arial, sans-serif;
   font-size: 25px;
   font-weight: 800;
 }
@@ -188,7 +210,8 @@ body {
   line-height: 30px;
   border-width: 0;
   background: #E4E3DF;
-  transition-property: "background-color";
+  padding-top: 11px;
+  transition-property: background-color;
   transition-duration: 0.3s;
 }
 

@@ -43,13 +43,13 @@ export class AddPost extends Component {
   render() {
     return (
       <div className="AddPost">
-        <form action="" class="air" onSubmit={this.handleSubmit}>
-          <div class="form-inner">
-            <div class="form-row">
-              <label for="address">Оставь свой пост</label>
+        <form action="" className="air" onSubmit={this.handleSubmit}>
+          <div className="form-inner">
+            <div className="form-row">
+              <label htmlFor="address">Оставь свой пост</label>
               <textarea rows="3" id="address" minLength="10" maxLength="200" required onChange={this.handleChange}></textarea>
             </div>
-            <div class="form-row-icon">
+            <div className="form-row-icon">
               <button type="submit">Post</button>
             </div>
           </div>
